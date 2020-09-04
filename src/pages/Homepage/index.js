@@ -82,10 +82,10 @@ function Homepage() {
           <div className="container">
             <div className="header-view d-flex flex-column justify-content-center align-items-center">
               <div className="header-view__header-line">
-                <h2 className="header-view__header">Open Price Feed</h2>
+                <h2 className="header-view__header">Open Oracle</h2>
               </div>
               <p className="header-view__subheader">
-                The Open Price Feed is a system to allow various sources (i.e. reporters) to sign off-chain data about prices and allow any Ethereum account to move that data on-chain.
+                These price feeds allow trusted data sources to provide dApps with a reliable market data anchored to Uniswap V2. Zoracles solution will provide zero-knowledge proofs to keep data transmission confidential.
               </p>
             </div>
           </div>
@@ -96,9 +96,9 @@ function Homepage() {
             <PriceWrapper Assets={Assets} />
           </div>
         </section>
-        <section className="reporters mb-4">
+        <section className="reporters">
           <div className="container">
-            <p className="section-header">Reporters</p>
+            <p className="section-header">Data Sources</p>
             <PriceWrapper Assets={ReporterAssets} />
           </div>
         </section>
