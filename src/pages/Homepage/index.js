@@ -85,7 +85,7 @@ function Homepage() {
                 <h2 className="header-view__header">Open Oracle</h2>
               </div>
               <p className="header-view__subheader">
-                These price feeds allow trusted data sources to provide dApps with a reliable market data anchored to Uniswap V2. Zoracles solution will provide zero-knowledge proofs to keep data transmission confidential.
+                These price feeds allow trusted data sources to provide dApps with reliable market data anchored to Uniswap V2. Zoracles solution will provide zero-knowledge proofs to keep data transmission confidential.
               </p>
             </div>
           </div>
