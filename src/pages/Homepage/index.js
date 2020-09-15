@@ -1,73 +1,17 @@
 import React, { Fragment } from 'react'
 import { PriceWrapper } from 'components/PriceComponent'
-import FaqComonent from 'components/FaqComponent'
+import DataSourceWrapper from 'components/DataSourceComponent'
 import Logo from 'common/Logo'
 import Footer from 'common/Footer'
 import './index.scss'
-import batImg from 'assets/icn-bat.svg'
-
-const Assets = [
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: 2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: -2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: -2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: -2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: -2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: -2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: 0.34,
-    pricePercentage: -2.69,
-    hoursBefore: "3hrs,34 mins ago",
-    imgSrc: batImg
-  },
-]
+import coinbaseImg from 'assets/coinbase.svg'
+import { pricePair } from 'constant'
 
 const ReporterAssets = [
   {
-    assetName: 'BAT',
+    assetName: 'Coinbase Pro',
     price: "10 prices",
-    imgSrc: batImg
-  },
-  {
-    assetName: 'BAT',
-    price: "10 prices",
-    imgSrc: batImg
+    imgSrc: coinbaseImg
   },
 ]
 
@@ -93,20 +37,15 @@ function Homepage() {
         <section className="prices">
           <div className="container">
             <p className="section-header">Assets</p>
-            <PriceWrapper Assets={Assets} />
+            <PriceWrapper Assets={pricePair} />
           </div>
         </section>
         <section className="reporters">
           <div className="container">
             <p className="section-header">Data Sources</p>
-            <PriceWrapper Assets={ReporterAssets} />
+            <DataSourceWrapper Assets={ReporterAssets} />
           </div>
         </section>
-        {/* <section className="faq-section">
-          <div className="container">
-            <FaqComonent />
-          </div>
-        </section> */}
       </div>
       <div className="footer">
         <Footer />
