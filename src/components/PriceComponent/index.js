@@ -4,7 +4,6 @@ import _ from 'lodash'
 import moment from 'moment'
 import {useInterval} from 'react-use';
 import Spinner from 'assets/spinner.svg'
-import './index.scss'
 
 const getAsset = (pair) => _.split(pair, '-')[0] 
 

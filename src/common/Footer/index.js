@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="probootstrap-footer-widget probootstrap-link-wrap">
             <h4 className="heading">Quick Links</h4>
             <ul className="stack-link">
-              <li><a href="#home">Home</a></li>
+              <li><a href="https://zoracles.com">Home</a></li>
               <li><a href="https://www.newsbtc.com/press-releases/zoracles-transforming-defi-oracle-data-with-zero-knowledge-proofs/">Press</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href="https://github.com/zoracles">Github</a></li>

@@ -3,8 +3,8 @@ import './index.scss'
 
 export default function Logo() {
   return (
-    <span className="logo">
+    <a href="https://zoracles.com" className="logo">
       Zoracles
-    </span>
+    </a>
   )
 }
