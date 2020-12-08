@@ -1,11 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { PriceWrapper } from 'components/PriceComponent'
 import DataSourceWrapper from 'components/DataSourceComponent'
 import Logo from 'common/Logo'
 import Footer from 'common/Footer'
 import './index.scss'
 import coinbaseImg from 'assets/coinbase.svg'
-import { pricePair } from 'constant'
+import uniswapImg from 'assets/uniswap.svg'
+import { tokens } from 'constant'
+import { priceFeedFromUniswap } from 'API'
 
 const ReporterAssets = [
   {
@@ -13,9 +15,17 @@ const ReporterAssets = [
     price: "10 prices",
     imgSrc: coinbaseImg
   },
+  {
+    assetName: 'Uniswap',
+    price: "10 prices",
+    imgSrc: uniswapImg
+  }
 ]
 
 function Homepage() {
+  useEffect(() => {
+    priceFeedFromUniswap('0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', 18).then(console.log)
+  }, [])
   return (
     <Fragment>
       <div className="header container">
@@ -37,7 +47,7 @@ function Homepage() {
         <section className="prices">
           <div className="container">
             <p className="section-header">Assets</p>
-            <PriceWrapper Assets={pricePair} />
+            <PriceWrapper Assets={tokens} />
           </div>
         </section>
         <section className="reporters">
