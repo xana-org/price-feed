@@ -7,7 +7,6 @@ import './index.scss'
 import coinbaseImg from 'assets/coinbase.svg'
 import uniswapImg from 'assets/uniswap.svg'
 import { tokens } from 'constant'
-import { priceFeedFromUniswap } from 'API'
 
 const ReporterAssets = [
   {
@@ -17,15 +16,12 @@ const ReporterAssets = [
   },
   {
     assetName: 'Uniswap',
-    price: "10 prices",
+    price: "20 prices",
     imgSrc: uniswapImg
   }
 ]
 
 function Homepage() {
-  useEffect(() => {
-    priceFeedFromUniswap('0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2', 18).then(console.log)
-  }, [])
   return (
     <Fragment>
       <div className="header container">
