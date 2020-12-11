@@ -27,8 +27,8 @@ const DataSourceWrapper = ({ Assets }) => {
   return (
     <div className="row">
       {
-        Assets.map(asset => 
-        <div className="col-xs-6 col-sm-6 col-lg-3">
+        Assets.map((asset, index) => 
+        <div key={`dataSource-${index}`} className="col-xs-6 col-sm-6 col-lg-3">
           <Asset {...asset} />
         </div>)
       }

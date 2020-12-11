@@ -23,11 +23,9 @@ const Asset = ({ pricePair, eth }) => {
     setPastTime(moment.utc(timeDiff).format('mm [min],ss [secs]'))
   }, 1000)
   useEffect(() => {
-    console.log(address, symbol)
     request('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2', getDerivedETHFromUniswap, {address}).then(({token}) => {
       const { derivedETH } = token;
       const price = derivedETH;
-      console.log('price', price, symbol)
       setTimestamp(moment())
       if (price === null)
         setPricePercentage(0)

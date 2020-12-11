@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import _ from 'lodash'
+import { request } from 'graphql-request'
 import UniswapAsset from './UniswapAsset'
-import { priceFeedAPI } from 'API'
+import { getETHPriceFromUniswap } from 'API'
 
 const PriceWrapper = ({ Assets }) => {
   const [ethPrice, setEthPrice] = useState(null)
   useEffect(() => {
     (async function priceFetch () {
-      const res = await priceFeedAPI()
-      setEthPrice(res.data.prices.ETH);
+      const {pair: {token1Price}} = await request('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2', getETHPriceFromUniswap)
+      setEthPrice(token1Price);
     })()
   }, [])
   return (
     <div className="row">
       {
-        Assets.map(asset => 
-        <div className="col-xs-6 col-sm-6 col-lg-3">
+        Assets.map((asset, index) => 
+        <div className="col-xs-6 col-sm-6 col-lg-3" key={`assetIndex-${index}`}>
           <UniswapAsset pricePair={asset} eth={ethPrice} />
         </div>)
       }
