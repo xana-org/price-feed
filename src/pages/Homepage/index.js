@@ -5,19 +5,23 @@ import Logo from 'common/Logo'
 import Footer from 'common/Footer'
 import './index.scss'
 import coinbaseImg from 'assets/coinbase.svg'
-import uniswapImg from 'assets/uniswap.svg'
+import okexImg from 'assets/okex.png'
 import { tokens } from 'constant'
 
 const ReporterAssets = [
   {
+    id: 'coinbase',
+    link: '/coinbase',
     assetName: 'Coinbase Pro',
     price: "10 prices",
     imgSrc: coinbaseImg
   },
   {
-    assetName: 'Uniswap',
+    id: 'okex',
+    link: '/okex',
+    assetName: 'Okex',
     price: "20 prices",
-    imgSrc: uniswapImg
+    imgSrc: okexImg
   }
 ]
 

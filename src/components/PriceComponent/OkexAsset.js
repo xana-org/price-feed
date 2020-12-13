@@ -8,41 +8,28 @@ import Spinner from 'assets/spinner.svg'
 
 const getAsset = (pair) => _.split(pair, '-')[0] 
 
-const Asset = ({token}) => {
-  const [assetName, setAssetName] = useState('')
+const Asset = ({asset, price}) => {
   const [pricePercentage, setPricePercentage] = useState(null)
-  const [price, setPrice] = useState(null)
   const [timestamp, setTimestamp] = useState(null)
-  const [priceFetchTime, setPriceFetchTime] = useState(0)
   const [pastTime, setPastTime] = useState(0)
 
   useInterval(() => {
-    setPriceFetchTime(t => t + 1)
-  }, _.random(5, 50) * 1000);
-
-  useInterval(() => {
     const timeDiff = moment().diff(timestamp)
-    console.log(moment.utc(timeDiff).format('mm [min],ss [secs]'))
     setPastTime(moment.utc(timeDiff).format('mm [min],ss [secs]'))
   }, 1000)
-
   useEffect(() => {
-    request('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2', getDerivedETHFromUniswap(token.address)).then(({price}) => {
-      setTimestamp(moment())
-      if (price === null)
-        setPricePercentage(0)
-      else
-        setPricePercentage(parseFloat(((parseFloat(price) - parseFloat(price)) / parseFloat(price) * 100).toFixed(2)))
-      setPrice(parseFloat(price).toFixed(2))
-      setAssetName(token.symbol)
-    })
-  }, [priceFetchTime])
+    setTimestamp(moment())
+    if (price === null)
+      setPricePercentage(0)
+    else
+      setPricePercentage(parseFloat(((parseFloat(price) - parseFloat(price)) / parseFloat(price) * 100).toFixed(2)))
+  }, [asset, price])
   return (
     <div className="prices-card">
-      {pastTime && assetName.length > 0 ? <Fragment>
+      {pastTime && asset.length > 0 ? <Fragment>
         <div className="prices-card__text-section">
           <div className="prices-card__text">
-            {assetName}
+            {asset}
           </div>
           <div className="prices-card__subtext-section">
             <h3 className="prices-card__text">{price > 0 && "$"}{price}</h3>
@@ -54,7 +41,7 @@ const Asset = ({token}) => {
             <p className="prices-card__subtext">{pastTime} ago</p>
           </div>
         </div>
-        <img className="prices-card__icon" src={require(`cryptocurrency-icons/svg/color/${assetName.toLowerCase()}.svg`)} alt="icon" />
+        <img className="prices-card__icon" src={require(`../../assets/${asset.toLowerCase()}.png`)} alt="icon" />
       </Fragment>: <img src={Spinner} alt="Spinner" />}
     </div>
   )

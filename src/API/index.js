@@ -1,5 +1,6 @@
 import Axios from 'axios'
-
+// import { PublicClient } from "@okfe/okex-node";
+// import { AuthenticatedClient } from "@okfe/okex-node";
 import { gql } from 'graphql-request'
 
 export const getDerivedETHFromUniswap = gql`
@@ -18,6 +19,6 @@ export const getETHPriceFromUniswap = gql`
   }
 }
 ` 
-// // export const priceFeedAPI = (pricePair) => {
-// //     authClient.spot().getAccounts().then(console.log);
-// // }
+
+export const priceFeedFromCoinbase = (pricePair) => Axios.get(`https://api.pro.coinbase.com/products/${pricePair}/ticker`)
+export const priceFeedFromOkex = () => Axios.get("https://cryptic-basin-87571.herokuapp.com/")

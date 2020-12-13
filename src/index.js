@@ -1,13 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import App from 'pages/Homepage';
+import Coinbase from 'pages/Coinbase';
+import Okex from 'pages/Okex';
 import * as serviceWorker from './serviceWorker';
 
 import './index.scss'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route exact path="/coinbase">
+          <Coinbase />
+        </Route>
+        <Route exact path="/okex">
+          <Okex />
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
