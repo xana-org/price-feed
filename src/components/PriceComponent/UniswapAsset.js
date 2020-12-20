@@ -16,7 +16,7 @@ const Asset = ({ pricePair, eth }) => {
   const [pastTime, setPastTime] = useState(0)
   useInterval(() => {
     setPriceFetchTime(t => t + 1)
-  }, _.random(5, 50) * 1000);
+  }, 100000);
 
   useInterval(() => {
     const timeDiff = moment().diff(timestamp)
@@ -25,13 +25,17 @@ const Asset = ({ pricePair, eth }) => {
   useEffect(() => {
     request('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2', getDerivedETHFromUniswap, {address}).then(({token}) => {
       const { derivedETH } = token;
-      const price = derivedETH;
+      const priceFromAPI = derivedETH;
       setTimestamp(moment())
-      if (price === null)
+      if (priceFromAPI === null)
         setPricePercentage(0)
-      else
-        setPricePercentage(parseFloat(((parseFloat(price) - parseFloat(price)) / parseFloat(price) * 100)))
-      setPrice(parseFloat(price))
+      else {
+        if (price === null)
+          setPricePercentage(0);
+        else
+          setPricePercentage(parseFloat(((parseFloat(price) - parseFloat(priceFromAPI)) / parseFloat(price) * 100)))
+      }
+      setPrice(parseFloat(priceFromAPI))
       setAssetName(symbol)
     }).catch(e => console.log(e))
   }, [priceFetchTime])
@@ -45,7 +49,7 @@ const Asset = ({ pricePair, eth }) => {
           <div className="prices-card__subtext-section">
             <h3 className="prices-card__text">{price > 0 && "$"}{(price * eth).toFixed(2)}</h3>
             <p className={`prices-card__subtext ${pricePercentage < 0 ? "prices-card__subtext--red" : "prices-card__subtext--green"}`}>
-              {pricePercentage > 0 && '+'}{pricePercentage * eth}{typeof pricePercentage === "number" && "%"}
+              {pricePercentage > 0 && '+'}{(pricePercentage * eth).toFixed(2)}{typeof pricePercentage === "number" && "%"}
             </p>
           </div>
           <div className="prices-card__subtext-section">

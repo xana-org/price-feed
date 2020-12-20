@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "./static/css/main.875b4fc7.chunk.css",
-    "main.js": "./static/js/main.a8edd426.chunk.js",
-    "main.js.map": "./static/js/main.a8edd426.chunk.js.map",
+    "main.js": "./static/js/main.265cfa9e.chunk.js",
+    "main.js.map": "./static/js/main.265cfa9e.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.7f1d4352.js",
     "runtime-main.js.map": "./static/js/runtime-main.7f1d4352.js.map",
-    "static/js/2.dcd7cfcd.chunk.js": "./static/js/2.dcd7cfcd.chunk.js",
-    "static/js/2.dcd7cfcd.chunk.js.map": "./static/js/2.dcd7cfcd.chunk.js.map",
+    "static/js/2.5ed4823f.chunk.js": "./static/js/2.5ed4823f.chunk.js",
+    "static/js/2.5ed4823f.chunk.js.map": "./static/js/2.5ed4823f.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.b129e2d372282fa9d78dd2432373659e.js": "./precache-manifest.b129e2d372282fa9d78dd2432373659e.js",
+    "precache-manifest.910a374ef36903fcd2d7b8c9b654fb96.js": "./precache-manifest.910a374ef36903fcd2d7b8c9b654fb96.js",
     "service-worker.js": "./service-worker.js",
     "static/css/main.875b4fc7.chunk.css.map": "./static/css/main.875b4fc7.chunk.css.map",
-    "static/js/2.dcd7cfcd.chunk.js.LICENSE.txt": "./static/js/2.dcd7cfcd.chunk.js.LICENSE.txt",
+    "static/js/2.5ed4823f.chunk.js.LICENSE.txt": "./static/js/2.5ed4823f.chunk.js.LICENSE.txt",
     "static/media/$pac.svg": "./static/media/$pac.c830fed4.svg",
     "static/media/0xbtc.svg": "./static/media/0xbtc.ca90430d.svg",
     "static/media/2give.svg": "./static/media/2give.9f370dcf.svg",
@@ -439,7 +439,7 @@
     "static/media/xvc.svg": "./static/media/xvc.8459152a.svg",
     "static/media/xvg.svg": "./static/media/xvg.f7d3bc42.svg",
     "static/media/xzc.svg": "./static/media/xzc.5c43b6c5.svg",
-    "static/media/yfi.png": "./static/media/yfi.122d3282.png",
+    "static/media/yfi.png": "./static/media/yfi.ff19a06e.png",
     "static/media/yoyow.svg": "./static/media/yoyow.9196885c.svg",
     "static/media/zcl.svg": "./static/media/zcl.69550867.svg",
     "static/media/zec.svg": "./static/media/zec.4775683f.svg",
@@ -453,8 +453,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7f1d4352.js",
-    "static/js/2.dcd7cfcd.chunk.js",
+    "static/js/2.5ed4823f.chunk.js",
     "static/css/main.875b4fc7.chunk.css",
-    "static/js/main.a8edd426.chunk.js"
+    "static/js/main.265cfa9e.chunk.js"
   ]
 }

@@ -13,14 +13,14 @@ const ReporterAssets = [
     id: 'coinbase',
     link: '/coinbase',
     assetName: 'Coinbase Pro',
-    price: "10 prices",
+    price: "12 prices",
     imgSrc: coinbaseImg
   },
   {
     id: 'okex',
     link: '/okex',
     assetName: 'Okex',
-    price: "20 prices",
+    price: "8 prices",
     imgSrc: okexImg
   }
 ]

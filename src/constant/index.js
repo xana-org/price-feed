@@ -35,7 +35,7 @@ export const tokens = [
     symbol: 'YFI',
   },
   {
-    address: '0x514910771af9ca656af840dff83e8264ecf986ca',
+    address: '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9',
     symbol: 'AAVE',
   },
   {

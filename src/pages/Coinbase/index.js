@@ -11,7 +11,7 @@ import { pricePair } from 'constant'
 const ReporterAssets = [
   {
     assetName: 'Okex',
-    price: "10 prices",
+    price: "8 prices",
     imgSrc: okexImg,
     link: "/okex"
   },

@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import {useInterval} from 'react-use';
 import OkexWrapper from 'components/PriceComponent/OkexWrapper'
 import DataSourceWrapper from 'components/DataSourceComponent'
 import Logo from 'common/Logo'
@@ -16,7 +17,7 @@ const ReporterAssets = [
     id: 'coinbase',
     link: '/coinbase',
     assetName: 'Coinbase Pro',
-    price: "10 prices",
+    price: "12 prices",
     imgSrc: coinbaseImg
   },
   {
@@ -29,6 +30,11 @@ const ReporterAssets = [
 
 function Homepage() {
   const [okexPrices, setOkexPrices] = useState([])
+  const [priceFetchTime, setPriceFetchTime] = useState(0)
+  useInterval(() => {
+    setPriceFetchTime(t => t + 1)
+  }, 10000);
+  
   useEffect(() => {
     const okexPriceFetch = async () => {
       const prices = []
@@ -40,7 +46,7 @@ function Homepage() {
       setOkexPrices(prices)
     }
     okexPriceFetch()
-  }, [])
+  }, [priceFetchTime])
   return (
     <Fragment>
       <div className="header container">

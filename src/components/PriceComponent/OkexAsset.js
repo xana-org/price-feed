@@ -12,6 +12,7 @@ const Asset = ({asset, price}) => {
   const [pricePercentage, setPricePercentage] = useState(null)
   const [timestamp, setTimestamp] = useState(null)
   const [pastTime, setPastTime] = useState(0)
+  const [pastPrice, setPastPrice] = useState(0)
 
   useInterval(() => {
     const timeDiff = moment().diff(timestamp)
@@ -21,8 +22,13 @@ const Asset = ({asset, price}) => {
     setTimestamp(moment())
     if (price === null)
       setPricePercentage(0)
-    else
-      setPricePercentage(parseFloat(((parseFloat(price) - parseFloat(price)) / parseFloat(price) * 100).toFixed(2)))
+    else {
+      if (pastPrice === 0) {
+        setPricePercentage(0);
+      } else
+        setPricePercentage(parseFloat(((parseFloat(pastPrice) - parseFloat(price)) / parseFloat(pastPrice) * 100).toFixed(2)))
+    }
+    setPastPrice(price)
   }, [asset, price])
   return (
     <div className="prices-card">
